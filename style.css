@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("assets/design/code (3).jpg");
+    min-height: 100%;
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+img.stack {
+    filter: grayscale(100%);
+    height: 80px;
+    margin: 15px;
+}
+
+img.logo {
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
+}
