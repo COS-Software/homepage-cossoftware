@@ -19,347 +19,159 @@
     <title>COS Software</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
 </head>
 <body>
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top animate__fadeInDown animate__animated">
+  <header class="w3-top animate__fadeInDown animate__animated">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+      <a href="#home" class="w3-bar-item">
+        <img src="assets/logo.png" class="logo" alt="logo" height="40px" />
+      </a>
 
-      <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-        <a href="#about" class="w3-bar-item w3-button">Sobre a empresa</a>
-        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Time</a>
-        <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Nosso trabalho</a>
-        <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> Preço</a>
-        <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contato</a>
+        <span onclick="choose(0)" class="w3-bar-item w3-button">Sobre</span>
+        <span onclick="choose(1)" class="w3-bar-item w3-button"><i class="fa fa-th"></i> &nbsp; Trabalho</span>
+        <span onclick="choose(2)" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> &nbsp; Tecnogias</span>
+        <span onclick="choose(3)" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> &nbsp; Contato</span>
       </div>
       
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <span class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="open()">
         <i class="fa fa-bars"></i>
-      </a>
+      </span>
     </div>
-  </div>
+  </header>
   
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fechar &times;</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Sobre a empresa</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Time</a>
-    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Nosso trabalho</a>
-    <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">Preço</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contato</a>
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: none" id="mySidebar">
+    <span onclick="close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fechar &times;</span>
+    <span onclick="choose(0)" class="w3-bar-item w3-button">Sobre</span>
+    <span onclick="choose(2)" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Trabalho</span>
+    <span onclick="choose(3)" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> Tecnogias</span>
+    <span onclick="choose(4)" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contato</span>
   </nav>
   
-  <!-- Header with full-height image -->
-  <header class="bgimg-1 w3-display-container" id="home">
-    <div class="w3-display-left w3-text-white" style="padding:48px">
-      <b>
-        <span class="w3-jumbo w3-hide-small">Comece algo valioso hoje</span><br>
-        <span class="w3-xxlarge w3-hide-large w3-hide-medium">Comece algo valioso hoje</span><br>
-        <span class="w3-large">Tem gente que sonha com o sucesso. E tem gente que trabalha todos os dias para conquitá-lo.</span>
-      </b>
-      <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Saiba mais e comece a realizar seu sonho hoje</a></p>
-    </div>
-    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+  <main class="jumbotron w3-display-container">
+    <div class="w3-display-bottomleft w3-text-white w3-large" style="padding:24px 48px">
       <a href=""><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
       <a href=""><i class="fa fa-instagram w3-hover-opacity"></i></a>
       <a href=""><i class="fa fa-twitter w3-hover-opacity"></i></a>
       <a href=""><i class="fa fa-linkedin w3-hover-opacity"></i></a>
     </div>
-  </header>
-  
-  <!-- About Section -->
-  <div class="w3-container" style="padding:128px 16px" id="about">
-    <h3 class="w3-center">Sobre a empresa</h3>
-    <p class="w3-center w3-large">Principais características da nossa empresa</p>
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
-      <div class="w3-quarter">
-        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-        <p class="w3-large">Responsivo</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      </div>
-      <div class="w3-quarter">
-        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-        <p class="w3-large">Paixão</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      </div>
-      <div class="w3-quarter">
-        <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-        <p class="w3-large">Design</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      </div>
-      <div class="w3-quarter">
-        <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-        <p class="w3-large">Suporte</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Promo Section - "We know design" -->
-  <div class="w3-container w3-light-grey" style="padding: 0px 16px">
-    <div class="w3-row-padding">
-      <div class="w3-col m12 w3-margin-top">
-        <h3>Anos de experiência de Mercado e Produtos</h3>
-        <div class="w3-center">
-          <img class="w3-image w3-round-large" src="assets/we-know.png" alt="Buildings" width="700" height="394">
-          <p class="w3-center"><small>Exemplo de um dos nossos Produtos</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Team Section -->
-  <div class="w3-container" style="padding:128px 16px" id="team">
-    <h3 class="w3-center">O Time</h3>
-    <p class="w3-center w3-large">Membros do empresa</p>
-    <div class="w3-row-padding w3-grayscale" style="margin-top: 32px">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card" style="padding-bottom: 15px;">
-          <img src="assets/christian.jpg" alt="Christian" style="width:100%">
-          <div class="w3-container">
-            <h3>Christian de Oliveira</h3>
-            <p class="w3-opacity">CEO & Founder</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-          </div>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card" style="padding-bottom: 15px;">
-          <img src="assets/andre.jpg" alt="André" style="width:100%">
-          <div class="w3-container">
-            <h3>André Souza</h3>
-            <p class="w3-opacity">Art Director</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Work Section
-  <div class="w3-container" style="padding:128px 16px" id="work">
-    <h3 class="w3-center">OUR Nosso trabalho</h3>
-    <p class="w3-center w3-large">What we've done for people</p>
-  
-    <div class="w3-row-padding" style="margin-top:64px">
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
-      </div>
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
-      </div>
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
-      </div>
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
-      </div>
-    </div>
-  
-    <div class="w3-row-padding w3-section">
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
-      </div>
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
-      </div>
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
-      </div>
-      <div class="w3-col l3 m6">
-        <img src="/assets/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
-      </div>
-    </div>
-  </div>
-  
-  <!-- Modal for full size images on click
-  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">&times;</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption" class="w3-opacity w3-large"></p>
-    </div>
-  </div> -->
-  
-  <!-- Skills Section -->
-  <div class="w3-container w3-light-grey w3-padding-64">
-    <div class="w3-row-padding">
-      <div class="w3-col">
-        <h3>Nossas Habilidades</h3>
-        <p>Algumas das nossas stacks:</p>
-        <br>
 
-        <img src="assets/linguagens/pgsql.png" class="stack" alt="pgsql" title="pgsql">
-        <img src="assets/linguagens/mongo.png" class="stack" alt="mongo" title="mongo">
-        <img src="assets/linguagens/mysql.png" class="stack" alt="mysql" title="mysql">
-        <img src="assets/linguagens/java.png" class="stack" alt="java" title="java">
-        <img src="assets/linguagens/c.png" class="stack" alt="c" title="c">
-        <img src="assets/linguagens/cpp.png" class="stack" alt="cpp" title="cpp">
-        <img src="assets/linguagens/cs.png" class="stack" alt="cs" title="cs">
-        <img src="assets/linguagens/php.png" class="stack" alt="php" title="php">
-        <img src="assets/linguagens/node.png" class="stack" alt="node" title="node">
-        <img src="assets/linguagens/python.png" class="stack" alt="python" title="python">
-        <img src="assets/linguagens/js.png" class="stack" alt="js" title="js">
-        <img src="assets/linguagens/typescript.png" class="stack" alt="typescript" title="typescript">
-        <img src="assets/linguagens/dart.png" class="stack" alt="dart" title="dart">
-        <img src="assets/linguagens/flutter.png" class="stack" alt="flutter" title="flutter">
-        <img src="assets/linguagens/react.png" class="stack" alt="react" title="react">
-        <img src="assets/linguagens/angular.png" class="stack" alt="angular" title="angular">
-        <img src="assets/linguagens/sqlserver.svg" class="stack" alt="sqlserver" title="sqlserver">
-        <img src="assets/linguagens/vue.png" class="stack" alt="vue" title="vue">
-        <img src="assets/linguagens/jquery.png" class="stack" alt="jquery" title="jquery">
-        <img src="assets/linguagens/bs.png" class="stack" alt="bs" title="bs">
-        <img src="assets/linguagens/oracle.png" class="stack" alt="oracle" title="oracle">
-        <img src="assets/linguagens/sass.png" class="stack" alt="sass" title="sass">
-        <img src="assets/linguagens/go.png" class="stack" alt="go" title="go">
-        <img src="assets/linguagens/kotlin.png" class="stack" alt="kotlin" title="kotlin">
-        <img src="assets/linguagens/nextjs.png" class="stack" alt="nextjs" title="nextjs">
-      </div>
+    <div class="section w3-display-left w3-text-white" style="display: block; padding: 48px">
+      <b>
+        <span class="w3-jumbo w3-hide-small">Comece algo valioso hoje</span><br>
+        <span class="w3-xxlarge w3-hide-large w3-hide-medium">Comece algo valioso hoje</span><br>
+        <span class="w3-large">Tem gente que sonha com o sucesso. E tem gente que trabalha todos os dias para conquitá-lo.</span>
+      </b>
+      <p><a class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Saiba mais e comece a realizar seu sonho hoje</a></p>
     </div>
-  </div>
   
-  <!-- Pricing Section
-  <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-    <h3>Preço</h3>
-    <p class="w3-large">Escolha um plano de preços que atenda às suas necessidades.</p>
-    <div class="w3-row-padding" style="margin-top:64px">
-      <div class="w3-third w3-section">
-        <ul class="w3-ul w3-white w3-hover-shadow">
-          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-          <li class="w3-padding-16"><b>10GB</b> Storage</li>
-          <li class="w3-padding-16"><b>10</b> Emails</li>
-          <li class="w3-padding-16"><b>10</b> Domains</li>
-          <li class="w3-padding-16"><b>Endless</b> Support</li>
-          <li class="w3-padding-16">
-            <h2 class="w3-wide">$ 10</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-      <div class="w3-third">
-        <ul class="w3-ul w3-white w3-hover-shadow">
-          <li class="w3-red w3-xlarge w3-padding-48">Pro</li>
-          <li class="w3-padding-16"><b>25GB</b> Storage</li>
-          <li class="w3-padding-16"><b>25</b> Emails</li>
-          <li class="w3-padding-16"><b>25</b> Domains</li>
-          <li class="w3-padding-16"><b>Endless</b> Support</li>
-          <li class="w3-padding-16">
-            <h2 class="w3-wide">$ 25</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-      <div class="w3-third w3-section">
-        <ul class="w3-ul w3-white w3-hover-shadow">
-          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-          <li class="w3-padding-16"><b>50GB</b> Storage</li>
-          <li class="w3-padding-16"><b>50</b> Emails</li>
-          <li class="w3-padding-16"><b>50</b> Domains</li>
-          <li class="w3-padding-16"><b>Endless</b> Support</li>
-          <li class="w3-padding-16">
-            <h2 class="w3-wide">$ 50</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-  
-  <!-- Contact Section -->
-  <div class="w3-container w3-light-grey" style="padding: 128px 16px" id="contact">
-    <h3 class="w3-center">Contato</h3>
-    <p class="w3-center w3-large">Envie-nos uma mensagem:</p>
-    <div class="w3-content">
-      <br>
-      <div class="w3-row">
-        <div class="w3-third w3-container">
-          <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Três Lagoas, Brasil</p>
+    <div class="section w3-display-left w3-card" style="padding:128px 16px">
+      <h3 class="w3-center">Sobre a empresa</h3>
+      <p class="w3-center w3-large">Principais características da nossa empresa</p>
+      <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-quarter">
+          <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+          <p class="w3-large">Responsivo</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
         </div>
-        <div class="w3-third w3-container">
-          <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Telefone: +55 (67) 99336-9450</p>
+        <div class="w3-quarter">
+          <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Paixão</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
         </div>
-        <div class="w3-third w3-container">
-          <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: contato@cossoftware.com.br</p>
+        <div class="w3-quarter">
+          <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Design</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
         </div>
-      </div>
-      <br>
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-        <p>
-          <button class="w3-button w3-black" type="submit">
-            <i class="fa fa-paper-plane"></i> ENVIAR MENSAGEM
-          </button>
-        </p>
-      </form>
-    </div>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="w3-black w3-padding-64">
-    <div class="w3-row-padding">
-      <div class="w3-col l3 w3-center  w3-padding-large">
-        <img src="assets/logo.png" class="logo" alt="logo" />
-      </div>
-      <div class="w3-col l3 w3-center  w3-padding-large">
-        <h2>COS Software</h2>
-        <p>Comece algo valioso hoje.</p>
-      </div>
-      <div class="w3-col l3 w3-center  w3-padding-large">
-        <h4>Mapa Do Site</h4>
-        <p>Home</p>
-        <p>Quem Somos</p>
-        <p>Serviços</p>
-        <p>Blog</p>
-        <p>Portfólio</p>
-        <p>Equipe de Ouro</p>
-        <p>Contato</p>
-      </div>
-      <div class="w3-col l3 w3-center  w3-padding-large">
-        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Para o topo</a>
-        <div class="w3-xlarge w3-section">
-          <i class="fa fa-facebook-official w3-hover-opacity"></i>
-          <i class="fa fa-instagram w3-hover-opacity"></i>
-          <i class="fa fa-twitter w3-hover-opacity"></i>
-          <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <div class="w3-quarter">
+          <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Suporte</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
         </div>
       </div>
     </div>
-  </footer>
     
-  <script>
-  // Toggle between showing and hiding the sidebar when clicking the menu icon
-  var mySidebar = document.getElementById("mySidebar");
-  
-  function w3_open() {
-    if (mySidebar.style.display === 'block') {
-      mySidebar.style.display = 'none';
-    } else {
-      mySidebar.style.display = 'block';
-    }
-  }
-  
-  // Close the sidebar with the close button
-  function w3_close() {
-      mySidebar.style.display = "none";
-  }
-  </script>
-    
+    <div class="section w3-display-middle w3-card" style="padding: 0px 16px">
+      <div class="w3-row-padding">
+        <div class="w3-col m12 w3-margin-top">
+          <h3>Anos de experiência de Mercado e Produtos</h3>
+          <div class="w3-center">
+            <img class="w3-image w3-round-large" src="assets/we-know.png" alt="Buildings" width="700" height="394">
+            <p class="w3-center"><small>Exemplo de um dos nossos Produtos</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section w3-display-middle w3-card w3-padding-64">
+      <div class="w3-row-padding">
+        <div class="w3-col">
+          <h3>Tecnologias</h3>
+          <p>Algumas das nossas stacks:</p>
+          <br>
+
+          <img src="assets/linguagens/pgsql.png" class="stack" alt="pgsql" title="pgsql">
+          <img src="assets/linguagens/mongo.png" class="stack" alt="mongo" title="mongo">
+          <img src="assets/linguagens/mysql.png" class="stack" alt="mysql" title="mysql">
+          <img src="assets/linguagens/java.png" class="stack" alt="java" title="java">
+          <img src="assets/linguagens/c.png" class="stack" alt="c" title="c">
+          <img src="assets/linguagens/cpp.png" class="stack" alt="cpp" title="cpp">
+          <img src="assets/linguagens/cs.png" class="stack" alt="cs" title="cs">
+          <img src="assets/linguagens/php.png" class="stack" alt="php" title="php">
+          <img src="assets/linguagens/node.png" class="stack" alt="node" title="node">
+          <img src="assets/linguagens/python.png" class="stack" alt="python" title="python">
+          <img src="assets/linguagens/js.png" class="stack" alt="js" title="js">
+          <img src="assets/linguagens/typescript.png" class="stack" alt="typescript" title="typescript">
+          <img src="assets/linguagens/dart.png" class="stack" alt="dart" title="dart">
+          <img src="assets/linguagens/flutter.png" class="stack" alt="flutter" title="flutter">
+          <img src="assets/linguagens/react.png" class="stack" alt="react" title="react">
+          <img src="assets/linguagens/angular.png" class="stack" alt="angular" title="angular">
+          <img src="assets/linguagens/sqlserver.svg" class="stack" alt="sqlserver" title="sqlserver">
+          <img src="assets/linguagens/vue.png" class="stack" alt="vue" title="vue">
+          <img src="assets/linguagens/jquery.png" class="stack" alt="jquery" title="jquery">
+          <img src="assets/linguagens/bs.png" class="stack" alt="bs" title="bs">
+          <img src="assets/linguagens/oracle.png" class="stack" alt="oracle" title="oracle">
+          <img src="assets/linguagens/sass.png" class="stack" alt="sass" title="sass">
+          <img src="assets/linguagens/go.png" class="stack" alt="go" title="go">
+          <img src="assets/linguagens/kotlin.png" class="stack" alt="kotlin" title="kotlin">
+          <img src="assets/linguagens/nextjs.png" class="stack" alt="nextjs" title="nextjs">
+        </div>
+      </div>
+    </div>
+
+    <div class="section w3-display-middle w3-card">
+      <h3 class="w3-center">Contato</h3>
+      <div class="w3-content">
+        <br>
+        <div class="w3-row">
+          <div class="w3-third w3-container w3-center">
+            <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> <br> Três Lagoas, MS <br> Brasil</p>
+          </div>
+          <div class="w3-third w3-container w3-center">
+            <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> <br> Telefone: <br> +55 (67) 99336-9450</p>
+          </div>
+          <div class="w3-third w3-container w3-center">
+            <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> <br> Email: contato@cossoftware.com.br</p>
+          </div>
+        </div>
+        <br>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+          <p>
+            <button class="w3-button w3-black" type="submit">
+              <i class="fa fa-paper-plane"></i> ENVIAR MENSAGEM
+            </button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
 </body>
 </html>
