@@ -15,29 +15,9 @@ body, html {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
     overflow: hidden;
-}
-
-/* Full height image header */
-.jumbotron {
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-image: url("assets/design/code (3).jpg");
-}
-
-.section {
-    display: none;
-}
-
-.section.w3-card {
-    padding: 48px;
-    background-color: white;
-    border-radius: 8px;
-}
-
-
-.w3-bar .w3-button {
-    padding: 16px;
+    background-color: #036897;
+    display: grid;
+    place-items: center;
 }
 
 img.stack {
@@ -46,8 +26,7 @@ img.stack {
     margin: 15px;
 }
 
-img.logo {
-    max-height: 150px;
-    display: block;
-    margin: 0 auto;
+main {
+    display: flex;
+    width: 100%;
 }
