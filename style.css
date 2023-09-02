@@ -12,12 +12,9 @@ html {
 }
 
 body, html {
-    height: 100%;
     font-family: 'Titillium Web', sans-serif;
     overflow: hidden;
     background-color: #036897;
-    display: grid;
-    place-items: center;
 }
 
 img.stack {
@@ -26,7 +23,19 @@ img.stack {
     margin: 15px;
 }
 
+img.logo {
+    max-width: 80%;
+    display: block;
+    margin: auto;
+}
+
 main {
-    display: flex;
+    padding-top: 25vh;
+    text-align: center;
+    color: white;
     width: 100%;
+}
+
+#msg {
+    transition: opacity 0.5s ease-in-out;
 }
