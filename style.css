@@ -159,7 +159,7 @@ main {
 }
 
 .showcase-container .item img.disabled {
-    filter: grayscale(90%);
+    filter: grayscale(100%);
 }
 
 .showcase-container .item .description {
@@ -245,14 +245,10 @@ main {
 }
 
 .about-container .row-container {
-    margin: 3rem;
+    margin: 3rem 3rem 8rem;
     display: flex;
     justify-content: space-between;
     gap: 10rem;
-}
-
-.about-container .row-container .texts-container {
-    
 }
 
 .about-container .row-container img {
