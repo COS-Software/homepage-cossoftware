@@ -1,4 +1,11 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --primary-color: #3d42f5;
+    --secondary-color: #495977;
+    --background-effect-color: #3498db55;
+}
 
 * {
     margin: 0;
@@ -9,4 +16,265 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+a.link {
+    text-decoration: underline;
+}
+
+button.btn {
+    background-color: var(--primary-color);
+    border: 0;
+    color: white;
+    box-shadow: 0 1px 3px 0 #1a1a1a1a, 0 1px 2px 0 #0000000f;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+:is(h1, h2, h3, h4, h5, h6).title.secondary {
+    color: var(--secondary-color);
+}
+
+main {
+    width: min(100%, 1400px);
+    display: block;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.main-header .logo-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-header .logo-container img {
+    max-height: 100px;
+}
+
+.main-header .logo-container .title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main-header .logo-container .title.blue {
+    color: #3d42f5;
+}
+
+.main-header nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: var(--secondary-color);
+}
+
+.main-header nav a:hover {
+    text-decoration: underline;
+}
+
+.main-header .button-link {
+    width: 20%;
+}
+
+.main-header button:hover {
+    transform: scale(1.1);
+}
+
+.title-container {
+    position: relative;
+    text-align: center;
+    margin: 20vh 2rem;
+}
+
+.title-container::after {
+    position: absolute;
+    top: -100px;
+    right: -50px;
+    content: '';
+    width: 180px;
+    height: 180px;
+    background-color: var(--background-effect-color);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    z-index: -1;
+}
+    
+.title-container .title {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+}
+
+.title-container p {
+    color: var(--secondary-color);
+    font-size: 1.125rem;
+    margin-block: 1rem;
+    line-height: 1.625;
+}
+
+.title-container button {
+    font-size: 1.125rem;
+}
+
+.showcase-container .items-container {
+    margin-block: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.showcase-container .item {
+    width: calc(33% - 30px);
+    background-color: #ebedf4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.showcase-container .item img {
+    --img-max-size: 50%;
+    max-width: var(--img-max-size);
+    display: block;
+    margin: 10% auto;
+}
+
+.showcase-container .item .description {
+    margin-block: 1rem;
+}
+
+.showcase-container .has-more-container {
+    position: relative;
+    margin: 20vh auto;
+    text-align: center;
+}
+
+.showcase-container .has-more-container::after {
+    position: absolute;
+    top: -60px;
+    right: 20%;
+    content: '';
+    width: 180px;
+    height: 180px;
+    background-color: var(--background-effect-color);
+    border-radius: 82% 18% 80% 20% / 30% 53% 47% 70%;
+    z-index: -1;
+}
+
+.showcase-container .has-more-container::before {
+    position: absolute;
+    bottom: 15px;
+    left: 20%;
+    content: '';
+    width: 180px;
+    height: 180px;
+    background-color: var(--background-effect-color);
+    border-radius: 31% 69% 39% 61% / 68% 53% 47% 32%;
+    z-index: -1;
+}
+
+.showcase-container .has-more-container button {
+    font-size: 1.5em;
+    padding-inline: 4rem;
+    margin: 3rem;
+}
+
+.tecnologies-showcase-container {
+    margin-block: 20vh;
+}
+
+.tecnologies-showcase-container .show-more-text {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    user-select: none;
+    cursor: pointer;
+}
+
+.tecnologies-showcase-container .show-more-text::after {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 10px);
+    content: '';
+    width: 140px;
+    height: 30px;
+    background-color: var(--background-effect-color);
+    border-radius: 2rem;
+    z-index: -1;
+}
+
+.tecnologies-container {
+    margin-block: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tecnologies-container img.tech {
+    height: 80px;
+}
+
+.about-container {
+    margin: 20vh 2rem;
+}
+
+.main-footer {
+    padding-top: 15vh;
+}
+
+.main-footer .information-container {
+    display: flex;
+    margin: 10vh auto;
+    gap: 3rem;
+}
+
+.main-footer .information-container .logo {
+    max-height: 150px;
+}
+
+.main-footer .information-container .step-container {
+    width: 100%;
+    color: var(--secondary-color);
+}
+
+.main-footer .information-container .step-container.center {
+    text-align: center;
+}
+
+.main-footer .information-container .step-container .title {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.main-footer .information-container .step-container .item {
+    width: 100%;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+.main-footer .last-container {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    margin: auto;
+    padding: 5vh 0;
 }
