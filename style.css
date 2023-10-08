@@ -245,16 +245,19 @@ main {
 }
 
 .about-container .row-container {
-    margin: 3rem 3rem 8rem;
     display: flex;
     justify-content: space-between;
-    gap: 10rem;
+    align-items: center;
+    gap: 5rem;
+}
+
+.about-container .row-container .texts-container p {
+    margin-bottom: 1rem;
 }
 
 .about-container .row-container img {
     width: min(100%, 30vw);
     border-radius: 1rem;
-    border: 1px solid #aaa;
 }
 
 .main-footer {
