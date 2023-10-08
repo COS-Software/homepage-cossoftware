@@ -27,6 +27,10 @@ a.link {
     text-decoration: underline;
 }
 
+.text-primary {
+    color: var(--primary-color);
+}
+
 button.btn {
     background-color: var(--primary-color);
     border: 0;
@@ -154,6 +158,10 @@ main {
     margin: 10% auto;
 }
 
+.showcase-container .item img.disabled {
+    filter: grayscale(90%);
+}
+
 .showcase-container .item .description {
     margin-block: 1rem;
 }
@@ -233,7 +241,24 @@ main {
 }
 
 .about-container {
-    margin: 20vh 2rem;
+    margin: 20vh 0;
+}
+
+.about-container .row-container {
+    margin: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.about-container .row-container .texts-container {
+    
+}
+
+.about-container .row-container img {
+    width: min(100%, 30vw);
+    border-radius: 1rem;
+    border: 1px solid #aaa;
 }
 
 .main-footer {
